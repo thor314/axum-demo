@@ -8,14 +8,18 @@ repository ="https://github.com/thor314/axum-demo"
 version    ="0.1.0"
 
 [dependencies]
-anyhow   ="1.0"
+anyhow   ="1.0.79"
 cute = "0.3.0"
-tracing = "0.1"
+tracing = "0.1.26"
 tracing-subscriber={ version="0.3", features=["env-filter", "fmt"] }
-tokio = { version = "1", features = ["full"] }
-futures = "0.3" 
-thiserror="1.0"
-env_logger = "0.11"
-dotenv = "0.15"
+tokio = { version = "1.36.0", features = ["full"] }
+futures = "0.3.30" 
+thiserror="1.0.57"
+env_logger = "0.11.2"
+dotenv = "0.15.0"
+# macros: tag a handler with debug_handler to debug routes
+axum = { version = "0.7.4", features = ["macros"] }
+tower-http = {version = "0.5.1", features = ["cors", "trace"]}
+
 [dev-dependencies]
 rstest    ="0.18"         # testing convenience proc-macros
