@@ -24,6 +24,7 @@ mod utils;
 #[tokio::main]
 async fn main() -> Result<(), MyError> {
   utils::setup()?;
+  let mongo_client = utils::mongo().await?;
   tokio::try_join!(frontend(), backend())?;
   Ok(())
 }
